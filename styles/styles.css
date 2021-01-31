@@ -27,7 +27,7 @@
 }
 
 /* navbar styles */
-button {
+.contact-btn {
     color: antiquewhite;
     padding:  9px 25px;
     background-color: rgba(255, 100, 100, 1);
@@ -37,7 +37,7 @@ button {
     transition: all 0.3s ease 0s;
 }
 
-button:hover {
+.contact-btn:hover {
     background-color: rgb(247, 142, 142);
 }
 
@@ -109,9 +109,20 @@ button:hover {
 }
 
 /* home section styles */
+.about-me-btn {
+    padding-top: 40px;
+    color: antiquewhite;
+    padding:  12px 25px;
+    background-color: rgba(255, 100, 100, 1);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
 .home {
     display: flex;
-    background: url("../images/code-bg.jpg") no-repeat center;
+    background: url("../images/home-page-bg.jpg") no-repeat center;
     height: 100vh;
     color: #fff;
     min-height: 500px;
@@ -120,24 +131,29 @@ button:hover {
     font-family: 'Oswald', sans-serif;
 }
 
-.home .max-width {
-    margin: auto 0 auto 40px;
+.home-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: -1;
 }
 
 .home .home-content .text-1 {
-    font-size: 27px;
+    font-size: 55px;
 }
 
 .home .home-content .text-2 {
-    font-size: 40px;
+    font-size: 45px;
     /* font-weight: 600; */
-    margin: 5px 0;
 }
 
 .home .home-content .text-2 span.typing {
     /* font-size: 40px; */
     font-weight: 500;
-    color: rgb(255, 0, 43);
+    color: rgb(255, 255, 255);
 }
 
 .home .home-content .text-2 span.typed-cursor {
@@ -147,25 +163,16 @@ button:hover {
 }
 
 /* media query */
-@media (max-width: 1104px) {
-    .home .max-width {
-        margin-left: 0px;
-    }
-}
-@media (max-width: 991px) { 
-    .max-width {
-        padding: 0 50px;
-    }
-}
 @media (max-width: 947px) {
     .menu-btn {
         /* color: #fff;
         font-size: 23px;
         cursor: pointer; */
         display: block;
-        z-index: 999;
+        z-index: 1001;
     }
-    button {
+
+    .contact-btn {
         position: fixed;
         height: 100vh;
         width: 100%;
@@ -176,15 +183,21 @@ button:hover {
         padding-top: 80px;
         transition: all 0.3s ease;
     }
-    button:hover {
+
+    .contact-btn:hover {
         background-color: rgb(247, 142, 142);
     }
 
     .menu-btn i.active:before {
         content: "\f00d";
     }
+    
+    .navbar {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
     .navbar .menu {
-        position: fixed;
+        position: absolute;
         height: 100vh;
         width: 100%;
         left: -100%;
@@ -193,6 +206,8 @@ button:hover {
         text-align: center;
         padding-top: 80px;
         transition: all 0.3s ease;
+
+        z-index: 1000;
     }
     .navbar .menu.active {
         left: 0;
@@ -206,7 +221,7 @@ button:hover {
         font-size: 25px;
     }
     .home .home-content .text-1 {
-        font-size: 35px;
+        font-size: 55px;
     }
     
     .home .home-content .text-2 {
@@ -221,13 +236,11 @@ button:hover {
         padding: 0 23px;
     }
     .home .home-content .text-1 {
-        font-size: 60px;
+        font-size: 40px;
     }
     
     .home .home-content .text-2 {
-        font-size: 32px;
-        /* font-weight: 600; */
-        margin: 5px 0;
+        font-size: 30px;
     }
 }
 
@@ -238,15 +251,30 @@ button:hover {
     .navbar .logo {
         padding-right: 32.5%;
     }
+
+    .home-content {
+        padding-bottom: 100px;
+    }
+
     .home .home-content .text-1 {
-        font-size: 50px;
+        font-size: 30px;
     }
     
     .home .home-content .text-2 {
-        font-size: 27px;
-        /* font-weight: 600; */
-        margin: 5px 0;
+        font-size: 20px;
     }
+
+    .about-me-btn {
+        padding-top: 40px;
+        color: antiquewhite;
+        padding: 9px 15px;
+        background-color: rgba(255, 100, 100, 1);
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: all 0.3s ease 0s;
+    }
+
     @media (max-width: 390px) { 
         .navbar .logo {
             padding-right: 26%;
@@ -373,12 +401,17 @@ button:hover {
 
 /* about me text styles */
 .about-text-wrapper {
-    padding: 0;
-    background-color: black;
+    width: 100%;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.955);
     font-family: 'Ubuntu', sans-serif;
 }
 
 .about-text-wrapper .header {
+    padding-bottom: 15px;
     color: white;
     text-align: center;
 }
@@ -389,6 +422,8 @@ button:hover {
 }
 
 .about-text-wrapper .text {
+    /* padding-top: 20px; */
+    /* padding-bottom: 50px; */
     text-align: center;
     color: white;
 }
@@ -396,7 +431,7 @@ button:hover {
 /* about my education styles */
 .education-section {
     background: url("../images/board.jpg") no-repeat center;
-    min-height: 250px;
+    min-height: 300px;
     max-width:100%;
     max-height:100%;
     object-fit: contain;
@@ -412,8 +447,20 @@ button:hover {
     font-family: 'Oswald', sans-serif;
 }
 
+.education-text-wrapper .header {
+    padding-bottom: 15px;
+}
+
 .education-text-wrapper {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
+
+    background-color: rgba(0, 0, 0, 0.955);
+    font-family: 'Ubuntu', sans-serif;
     background-color: black;
     color: white;
     font-family: 'Ubuntu', sans-serif;
@@ -422,7 +469,7 @@ button:hover {
 /* my hobbies styles */
 .hobbies-section {
     background: url("../images/studio-screen.jpg") no-repeat center;
-    min-height: 250px;
+    min-height: 300px;
     max-width:100%;
     max-height:100%;
     object-fit: contain;
@@ -438,8 +485,20 @@ button:hover {
     font-family: 'Oswald', sans-serif;
 }
 
+.hobbies-text-wrapper .header {
+    padding-bottom: 15px;
+}
+
 .hobbies-text-wrapper {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
+
+    background-color: rgba(0, 0, 0, 0.955);
+    font-family: 'Ubuntu', sans-serif;
     background-color: black;
     color: white;
     font-family: 'Ubuntu', sans-serif;
@@ -448,7 +507,7 @@ button:hover {
 /* my goals styles */
 .goals-section {
     background: url("../images/html.jpg") no-repeat center;
-    min-height: 250px;
+    min-height: 300px;
     max-width:100%;
     max-height:100%;
     object-fit: contain;
@@ -464,9 +523,39 @@ button:hover {
     font-family: 'Oswald', sans-serif;
 }
 
+.goals-text-wrapper .header {
+    padding-bottom: 15px;
+    z-index: -1;
+}
+
 .goals-text-wrapper {
+    width: 100%;
+    height: 325px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
+
+    background-color: rgba(0, 0, 0, 0.955);
+    font-family: 'Ubuntu', sans-serif;
     background-color: black;
     color: white;
     font-family: 'Ubuntu', sans-serif;
+}
+
+@media only screen and (max-width: 420px) {
+    .goals-text-wrapper {
+        width: 100%;
+        height: 500px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    
+        background-color: rgba(0, 0, 0, 0.955);
+        font-family: 'Ubuntu', sans-serif;
+        background-color: black;
+        color: white;
+        font-family: 'Ubuntu', sans-serif;
+    }
 }
