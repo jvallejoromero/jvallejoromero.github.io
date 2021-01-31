@@ -31,9 +31,11 @@ $(document).ready(function() {
             let cursorBlink = document.querySelector(".text-2 span.typed-cursor");
             if (navList.classList.contains("active")) {
                 // remove cursor blink if menu active
+                document.querySelector('.home-content').style.visibility = "hidden";
                 if (cursorBlink != null) {cursorBlink.style.color = "rgba(255, 255, 255, 0)";}
             } else {
                 // add cursor blink if menu disactive
+                document.querySelector('.home-content').style.visibility = "visible";
                 if (cursorBlink != null) {cursorBlink.style.color = "rgba(255, 0, 43, 0.445)";}
             }
         } 
@@ -56,6 +58,12 @@ $(document).ready(function() {
         } else if (document.body.clientWidth < 947 && !navList.innerHTML.startsWith('<li><a href="#">Home</a></li>')) {
             // console.log("resive event: added list items");
             navList.innerHTML = '<li><a href="/">Home</a></li><li><a href="about.html">About</a></li><li><a href="projects.html">Projects</a></li><li><a href="services.html">Services</a></li><li><a href="contact.html">Contact</a></li>';
+        }
+
+        if (navList.classList.contains("active")) {
+            document.querySelector('.home-content').style.visibility = "hidden";
+        } else {
+            document.querySelector('.home-content').style.visibility = "visible";
         }
 
         // update typing cursor
