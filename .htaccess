@@ -1,0 +1,8 @@
+ErrorDocument 403 /page-not-found.html
+ErrorDocument 404 /page-not-found.html
+ErrorDocument 500 /page-not-found.html
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)\.html$ /$1 [L,R=301] 
