@@ -312,7 +312,7 @@ html, body {
 /* About Section Styling */
 .about-section {
     width: 100%;
-    height: 300%;
+    height: 325%;
     display: flex;
     flex-direction: column;
 }
