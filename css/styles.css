@@ -738,7 +738,6 @@ a[href^="tel"] {
     .projects-section-text {
         width: 100%;
     }
-
     .inline-photo {
         border: 1em solid #fff;
         border-bottom: 3em solid #fff;
@@ -757,7 +756,10 @@ a[href^="tel"] {
         opacity: 1;
         transform: rotateZ(0deg);
     }
-
+    .skills-list {
+        padding-left: 0;
+        padding-right: 0;
+    }
     .resume-section {
         flex-direction: column;
         height: 200%;
